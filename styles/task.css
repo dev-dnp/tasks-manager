@@ -1,0 +1,283 @@
+#main-task #btn-add-task {
+	border-radius: 50%;
+	position: fixed;
+	bottom: 30px;
+	right: 10%;
+	cursor: pointer;
+	background-color: var(--colorOk);
+}
+
+#main-task #btn-add-task > div {
+	width: 40px;
+	height: 40px;
+	color: var(--white);
+}
+
+#main-task #btn-add-task .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*line-height: auto;*/
+}
+
+#task-container {
+	border-left: var(--borderOne);
+	width: 100%;	
+    padding-top: 20px;
+
+}
+
+#task-container .task-list {
+	padding: 10px 0;
+}
+
+#task-container .task-list .task-item {
+	margin-bottom: 10px;
+	padding-bottom: 8px;
+    background-color: rgb(0 202 146 / 5%);
+}
+
+#task-container .task-list .task-item:hover > .number-name .task-number {
+	background-color: rgb(0, 165, 119);
+}
+
+#task-container .task-list .task-item .number-name .task-number {
+	background-color: var(--colorOne);
+	color: white;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	position: relative;
+	right: 16px;
+	border: var(--borderOne);
+	box-shadow: 0px 0px 0px 3px  var(--colorOne);
+	cursor: pointer;
+}
+
+#task-container .task-list .task-item .number-name .task-name {
+	text-transform: uppercase;
+	color: white;
+}
+
+
+#task-container .task-list .task-item .task-info {
+	margin-left: 34px;
+	line-height: 22px;
+	padding-left: 5px;
+	line-height: 20px;
+	border-left: 4px solid rgba(255, 255, 255, 1.0);
+	color: rgba(255, 255, 255, 0.5);
+	/*background-color: rgba(0,202,146,0.08);
+	line-height: 28px;*/
+}
+
+#task-aside-add {
+	width: 500px;
+	/*background-color: red;*/
+	/*display: none;*/
+	height: 100vh;
+	border-left: var(--borderOne);
+	padding-left: 30px;
+}
+
+#task-aside-add .box-input {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	margin-top: 30px;
+}
+
+#task-aside-add .box-input label {
+	color: rgba(255,255,255, 0.3);
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	transition: 0.3s all;
+	z-index: -1;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+#task-aside-add .box-input .input{
+	background-color: transparent;
+	border: var(--borderOne);
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	padding: 0 10px;
+	outline: none;
+	color: rgba(255,255,255, 0.5);
+}
+
+#task-aside-add .box-input .input:focus ~ label, 
+#task-aside-add .box-input .input:valid ~ label
+{
+	color: rgba(255,255,255, 0.3);
+	position: absolute;
+	top: -5px;
+	transform: translateY(0);
+	left: 8px;
+	background-color: var(--colorOne);
+	padding: 0 4px;
+	font-size: 12px;
+	
+	z-index: 1;
+}
+
+#task-aside-add select {
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.3);
+	border: var(--borderOne);
+}
+
+#task-aside-add select option {
+	background-color: black;
+}
+
+#task-aside-add .box-select span {
+	color: rgba(255, 255, 255, 0.3);
+}
+
+#task-aside-add .box-select {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 40px;
+	width: 100%;
+}
+
+
+
+#main-task [data-view="false"] > #task-aside-add {
+	display: none;
+}
+
+#modal-del {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	display: grid;
+	place-items: center;
+	left: 0;
+	visibility: hidden;
+}
+
+#modal-del.open {
+	visibility: visible;
+}
+
+#modal-del > div {
+	background-color: var(--backgroundModal);
+	width: 300px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#modal-del div h3{
+	font-family: 'Roboto';
+	color: var(--titleModal);
+	font-weight: 100;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+
+#modal-add {
+	background-color: black;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: grid;
+	place-items: center;
+	visibility: hidden;
+}
+
+#modal-add.open {
+	visibility: visible;
+}
+
+#modal-add .box-modal-add {
+	width: 512px;
+	/*height: 300px;*/
+	background-color: var(--backgroundModal);
+	border-radius: 5px;
+	padding: 20px;
+	
+	
+}
+
+#modal-add .box-modal-add h1 {
+	font-family: 'Roboto';
+	color: var(--titleModal);
+	font-weight: 100;
+	margin-bottom: 20px;
+}
+
+#modal-add .box-modal-add .input-add {
+	background-color: #1c1c1e;
+	border: 0;
+	border-left: 4px solid var(--colorOk);
+	padding: 5px 8px;
+	color: white;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+#modal-add .box-modal-add .datetime {
+	display: flex;
+	justify-content: space-between;
+}
+
+#modal-add .box-modal-add .datetime input {
+	width: 48%;
+}
+
+ .btns-modal .btn-modal {
+	height: 32px;
+	width: 82px;
+	border-radius: 4px;
+	background-color: transparent;
+	/*border: 1px solid rgb(95, 99, 104);*/
+	padding: 5px;
+	color: rgb(255,255,255, 0.7);
+	cursor: pointer;
+	font-size: 14px;
+}
+
+ .btns-modal {
+	margin-top: 10px;
+	justify-content: flex-end;
+}
+
+ .btns-modal .btn-modal.add {
+	background-color: rgba(0,202,146,0.68);
+	color: white;
+}
+
+ .btns-modal .btn-modal.del {
+	background-color: rgba(255, 98, 88, 0.8);
+	color: white;
+}
+
+ .btns-modal .btn-modal.add:active {
+	background-color: var(--colorOk);
+}
+
+#alert-empty {
+	display: none;
+	color: white;
+	margin-left: 10px;
+}
+
+#alert-empty.on {
+	display: block;
+}

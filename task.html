@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Gestor | Tarefas</title>
+		
+		<!-- LINK FONT AWESON | START -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+		<!-- LINK FONT AWESON | END -->
+		
+		<!-- LINK CSS | START -->
+		<link rel="stylesheet" href="styles/home.css"/>
+		<link rel="stylesheet" href="styles/task.css"/>
+		<link rel="stylesheet" href="styles/responsive.css"/>
+		<!-- LINK CSS | END -->
+		
+	</head>
+	<body>
+		
+		<!-- PRÉ-LOADING | START -->
+		<div id="box-pre-load"><div class="pre-load"></div></div>
+		<script type="text/javascript">
+			const preLoad = document.querySelector('#box-pre-load')
+			window.onload = () => {preLoad.classList.add('off')}
+		</script>
+		<!-- PRÉ-LOADING | END -->
+		
+		<!-- HEADER | START -->
+		<header id="header">
+			<div class="container df aic-jcsb">
+				<div class="logo">
+					LOGO
+				</div>
+				
+				<input type="checkbox" id="check-mobile" class="hidden"/>
+				
+				<!-- NAV BAR | START -->
+				<nav class="menu menu-mobile">
+					<ul id="list-menu">
+						<li>
+							<a href="index.html">
+								<i class="fas fa-home"></i>
+								Ínicio
+							</a>
+						</li>
+						<li>
+							<a href="index.html#about">
+								<i class="fas fa-users"></i>
+								Sobre
+							</a>
+						</li>
+						<li>
+							<a class="active">
+								<i class="fas fa-tasks"></i>
+								Minhas Tarefas
+							</a>
+						</li>
+					</ul>
+				</nav>
+				
+				
+				<!-- NAV BAR | END -->
+				
+				<!-- LOGO MENU MOBILE | START -->
+				<label id="logo-menu-mobile" for="check-mobile" title="menu">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</label>
+				<!-- LOGO MENU MOBILE | END -->
+				
+			</div>
+		</header>
+		<!-- HEADER | END -->
+		
+		<main id="main-task">
+			
+			<div class="container df" data-view="true">
+				<div id="task-container" >
+					<p id="alert-empty">Nenhuma tarefa registada!</p>
+					
+					<ul class="task-list">
+					</ul>
+				</div>
+				
+				
+			</div>
+			
+			<!-- BUTTON ADD TASK | START -->
+			<div id="btn-add-task" onclick="openModal()" title="Adicionar tarefa">
+				<div class="df c">
+					<i class="fas fa-plus" ></i>
+				</div>
+			</div>
+			<!-- BUTTON ADD TASK | END -->
+		</main>
+		
+		
+		
+		<div id="modal-add">
+			<div class="box-modal-add">
+				<h1>Adicionar tarefa</h1>
+				
+				
+				<input type="text" id="input-name" class="input-add" placeholder="Titulo" autocomplete="off">
+				
+				<textarea rows="4" id="description" class="input-add" placeholder="Descrição"></textarea>
+				
+				<div class="datetime">
+					<input type="date" id="inputdate" class="input-add" placeholder="Data: 12/12/2020">
+					<input type="time" id="hour" class="input-add" placeholder="Hora">
+				</div>
+				
+				<div class="btns-modal df">
+					<button class="btn-modal cancel" onclick="openModal()">Cancelar</button>
+					<button class="btn-modal add" id="btn-add">Adicionar</button>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div id="modal-del">
+			<div>
+				<h3>Tem certeza que quer eliminar?</h3>
+				<div class="btns-modal df">
+					<button class="btn-modal cancel" onclick="openModalDel()">Cancelar</button>
+					<button class="btn-modal del btn-delete" onclick="deleteTask(event)">Eliminar</button>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script src="scripts/taskapp.js"></script>
+		<script src="scripts/view.js"></script>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	</body>
+</html>
